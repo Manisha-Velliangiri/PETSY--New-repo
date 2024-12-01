@@ -1,5 +1,3 @@
-const port = 4000;  // You can remove this if not using it in production
-
 // Initializing all dependencies and modules
 const express = require("express");
 const app = express();
@@ -32,7 +30,7 @@ const upload = multer({ storage: storage });
 
 // Endpoint to upload images
 app.post("/upload", upload.single('product'), (req, res) => {
-  const baseURL = process.env.NODE_ENV === 'production' ? 'https://petsy-new-repo.onrender.com' : `http://localhost:${port}`;
+  const baseURL = 'https://petsy-new-repo.onrender.com';  // Static base URL for live backend
   
   res.json({
     success: 1,
@@ -185,9 +183,9 @@ app.post('/getcart', fetchUser, async (req, res) => {
 });
 
 // API creation for listening on the specified port
-app.listen(port, (error) => {
+app.listen(process.env.PORT || 4000, (error) => {
   if (!error) {
-    console.log("Server running on port " + port);
+    console.log("Server running");
   } else {
     console.log("Error: " + error);
   }
