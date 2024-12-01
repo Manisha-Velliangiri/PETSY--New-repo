@@ -48,7 +48,7 @@ const ListProduct = () => {
           return (
             <div key={index} className="listproduct-format-main listproduct-format">
               {/* Construct full image URL */}
-              <img src={`https://petsy-new-repo.onrender.com/${product.image}`} alt={product.name} className='listproduct-product-icon' />
+              <img src={`https://petsy-new-repo.onrender.com/images/${product.image}`} alt={product.name} className='listproduct-product-icon' />
               <p>{product.name}</p>
               <p>Rs.{product.old_price}</p>
               <p>Rs.{product.new_price}</p>
