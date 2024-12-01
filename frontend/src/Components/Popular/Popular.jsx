@@ -8,7 +8,7 @@ const Popular = () => {
     const [popularProducts,setPopularProducts]=useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:4000/popularindogs')
+        fetch('https://petsy-new-repo.onrender.com/popularindogs')
         .then((response)=>response.json())
         .then((data)=>setPopularProducts(data));
     },[])
