@@ -12,14 +12,16 @@ const ProductDisplay = (props) => {
         <div className="productdisplay">
             <div className="productdisplay-left">
                 <div className="productdisplay-img-list">
-                    <img src={product.image} alt="Product thumbnail" />
-                    <img src={product.image} alt="Product thumbnail" />
-                    <img src={product.image} alt="Product thumbnail" />
-                    <img src={product.image} alt="Product thumbnail" />
+                    {/* Ensure you prepend the full URL */}
+                    <img src={`https://petsy-new-repo.onrender.com/images/${product.image}`} alt="Product thumbnail" />
+                    <img src={`https://petsy-new-repo.onrender.com/images/${product.image}`} alt="Product thumbnail" />
+                    <img src={`https://petsy-new-repo.onrender.com/images/${product.image}`} alt="Product thumbnail" />
+                    <img src={`https://petsy-new-repo.onrender.com/images/${product.image}`} alt="Product thumbnail" />
                 </div>
             </div>
             <div className="productdisplay-img">
-                <img className='productdisplay-main-img' src={product.image} alt="Main product" />
+                {/* Ensure you prepend the full URL */}
+                <img className='productdisplay-main-img' src={`https://petsy-new-repo.onrender.com/images/${product.image}`} alt="Main product" />
             </div>
             <div className="productdisplay-right">
                 <h1>{product.name}</h1>
@@ -61,4 +63,5 @@ const ProductDisplay = (props) => {
 };
 
 export default ProductDisplay;
+
 
