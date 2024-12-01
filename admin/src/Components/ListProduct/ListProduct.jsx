@@ -45,21 +45,23 @@ const ListProduct = () => {
       <div className="listproduct-allproducts">
         <hr />
         {allproducts.map((product, index) => {
-          return <>
+          return (
             <div key={index} className="listproduct-format-main listproduct-format">
-              <img src={product.image} alt="" className='listproduct-product-icon' />
+              {/* Construct full image URL */}
+              <img src={`https://petsy-new-repo.onrender.com/${product.image}`} alt={product.name} className='listproduct-product-icon' />
               <p>{product.name}</p>
               <p>Rs.{product.old_price}</p>
               <p>Rs.{product.new_price}</p>
               <p>{product.category}</p>
-              <img onClick={() => { remove_product(product.id) }} className="listproduct-remove-icon" src={cross_icon} alt="" />
+              <img onClick={() => { remove_product(product.id) }} className="listproduct-remove-icon" src={cross_icon} alt="Remove" />
             </div>
-            <hr />
-          </>
+          );
         })}
+        <hr />
       </div>
     </div>
   )
 }
 
 export default ListProduct;
+
