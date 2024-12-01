@@ -42,24 +42,24 @@ let all_product = [
     name: "Cute pink fairy net dress",
     category: "dog",
     image: p1_img,
-    new_price: 800.0,
-    old_price: 80.5,
+    new_price: 80.0,
+    old_price: 800.5,
   },
   {
     id: 2,
     name: "Red pink Rain coat",
     category: "dog",
     image: p2_img,
-    new_price: 850.0,
-    old_price: 120.5,
+    new_price: 450.0,
+    old_price: 820.5,
   },
   {
     id: 3,
     name: "Cute stuffed Elephant plushy",
     category: "dog",
     image: p3_img,
-    new_price: 600.0,
-    old_price: 100.5,
+    new_price: 300.0,
+    old_price: 600.5,
   },
   {
     id: 4,
@@ -67,15 +67,15 @@ let all_product = [
     category: "dog",
     image: p4_img,
     new_price: 600.0,
-    old_price: 150.0,
+    old_price: 950.0,
   },
   {
     id: 5,
     name: "Bright yellow Raincoat",
     category: "dog",
     image: p5_img,
-    new_price: 1850.0,
-    old_price: 120.5,
+    new_price: 520.0,
+    old_price: 1850.5,
   },
   {
     id: 6,
@@ -83,7 +83,7 @@ let all_product = [
     category: "cats",
     image: p6_img,
     new_price: 385.0,
-    old_price: 120.5,
+    old_price: 720.5,
   },
   {
     id: 7,
@@ -99,7 +99,7 @@ let all_product = [
     category: "dog",
     image: p8_img,
     new_price: 300.0,
-    old_price: 120.5,
+    old_price: 720.5,
   },
   {
     id: 9,
@@ -107,7 +107,7 @@ let all_product = [
     category: "cats",
     image: p9_img,
     new_price: 850.0,
-    old_price: 120.5,
+    old_price: 1020.5,
   },
   {
     id: 10,
@@ -115,7 +115,7 @@ let all_product = [
     category: "dog",
     image: p10_img,
     new_price: 900.0,
-    old_price: 120.5,
+    old_price: 1520.5,
   },
   {
     id: 11,
@@ -123,7 +123,7 @@ let all_product = [
     category: "cats",
     image: p11_img,
     new_price: 385.0,
-    old_price: 120.5,
+    old_price: 720.5,
   },
   {
     id: 12,
@@ -131,7 +131,7 @@ let all_product = [
     category: "dog",
     image: p12_img,
     new_price: 500.0,
-    old_price: 120.5,
+    old_price: 920.5,
   },
   {
     id: 13,
@@ -139,7 +139,7 @@ let all_product = [
     category: "dog",
     image: p13_img,
     new_price: 485.0,
-    old_price: 120.5,
+    old_price: 620.5,
   },
   {
     id: 14,
@@ -147,7 +147,7 @@ let all_product = [
     category: "cats",
     image: p14_img,
     new_price: 600.0,
-    old_price: 120.5,
+    old_price: 1220.5,
   },
   {
     id: 15,
@@ -155,7 +155,7 @@ let all_product = [
     category: "cats",
     image: p15_img,
     new_price: 500.0,
-    old_price: 120.5,
+    old_price: 620.5,
   },
   {
     id: 16,
@@ -163,7 +163,7 @@ let all_product = [
     category: "dog",
     image: p16_img,
     new_price: 850.0,
-    old_price: 120.5,
+    old_price: 920.5,
   },
   {
     id: 17,
@@ -171,7 +171,7 @@ let all_product = [
     category: "cats",
     image: p17_img,
     new_price: 600.0,
-    old_price: 120.5,
+    old_price: 1520.5,
   },
   {
     id: 18,

@@ -1,22 +1,24 @@
-const port= 4000;
+const port= 4000;                                                                                              
 //initializing all dependencies and modules
-const express = require("express");
-const app = express();
+const express = require("express");                                                                          
+const app = express();                                                                                       
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const multer = require("multer");
+//multer- middleware to handle file uploads, helps in saving the imges to server
 const path = require("path");
+//node js built in mod, works with file paths. used to define file extentions when we r uploading them
 const cors = require("cors");
 
-//to pass the reqs automatically through json
-app.use(express.json());
-app.use(cors());
+//to pass the reqs automatically through json                                                                
+app.use(express.json());                                                                                       
+app.use(cors());                                                                                               
 //manishadev  //petsy7devmanisha7
 //initialize database
-mongoose.connect("mongodb+srv://manisha:mongopetsyme@petsy.gipdnth.mongodb.net/petsy");
+mongoose.connect("mongodb+srv://manisha:dbusermanisha7@petsy.gipdnth.mongodb.net/?retryWrites=true&w=majority&appName=petsy");
 
 //api creation
-app.get("/",(req,res)=>{
+app.get("/",(req,res)=>{                                                                                      
     res.send("Express app is running")
 })
 
@@ -28,14 +30,14 @@ const storage = multer.diskStorage({
        return cb(null,`${file.fieldname}_${Date.now()}_${path.extname(file.originalname)}`)
     }
 })
-//upload function 
+//upload function                    
 const upload =multer({storage:storage})
 
-//endpoint, to upload img
+//endpoint, to upload img 
 app.use('/images',express.static('upload/images'))
 app.post("/upload",upload.single('product'),(req,res)=>{
   res.json({
-    success:1 ,//if img succ uploades,return success:1
+    success:1 ,
     image_url:`http://localhost:${port}/images/${req.file.filename}`
   })
 })
@@ -205,7 +207,7 @@ app.get('/newcollections',async(req,res)=>{
 })
 
 //creating middleware to fetch user
-const fetchUser = async (req,res,next)=>{
+const fetchUser = async (req,res,next)=>{                                                           
   const token = req.header('auth-token');
   if(!token){
     return res.status(401).send({errors:"Please authenticate using valid token"});
@@ -232,8 +234,8 @@ app.get('/popularindogs',async(req,res)=>{
    res.send(popular_in_dogs);
 })
 
-//creating endpoint for adding products in cartdata
-app.post('/addtocart',fetchUser,async(req,res)=>{
+//creating endpoint for adding products in cartdata 
+app.post('/addtocart',fetchUser,async(req,res)=>{                                            
     console.log("added",req.body.itemId);
     let userData = await Users.findOne({_id:req.user.id});
     userData.cartData[req.body.itemId]+=1;
@@ -241,7 +243,6 @@ app.post('/addtocart',fetchUser,async(req,res)=>{
     res.send("Added");
 })
 //creating endpoint to remove product from cartdata
-
 app.post('/removefromcart',fetchUser,async(req,res)=>{
     console.log("removed",req.body.itemId);
     let userData = await Users.findOne({_id:req.user.id});
@@ -255,12 +256,11 @@ app.post('/getcart',fetchUser,async(req,res)=>{
     let userData = await Users.findOne({_id:req.user.id});
     res.json(userData.cartData);
 })
-
 //API creation
-app.listen(port,(error)=>{
-     if(!error){
+app.listen(port,(error)=>{                                                                         
+     if(!error){                                                                                   
         console.log("server running on port "+port)
      }else{
         console.log("error: "+error)
-     }
+    }
 })
